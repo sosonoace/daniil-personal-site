@@ -19,3 +19,11 @@ if (menuButton && navigation) {
 document.querySelectorAll('[data-year]').forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
+
+
+document.querySelectorAll('.flip-card').forEach((card) => {
+  card.addEventListener('click', () => {
+    const flipped = card.classList.toggle('is-flipped');
+    card.setAttribute('aria-pressed', String(flipped));
+  });
+});
